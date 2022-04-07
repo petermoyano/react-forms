@@ -1,0 +1,8 @@
+div div{
+    display: inline-block;
+    border: 2em;
+}
+.box:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}

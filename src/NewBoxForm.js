@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 
-function NewBoxForm() {
+function NewBoxForm({addBox}) {
     /*     const [width, setWidth] =  useState(100);
         const [height, setHeight] =  useState(100);
         const [backgroundColor, setBackgroundColor] =  useState('red'); */
-    const initialState = { width: 100, height: 100, backgroundColor: "#000000" };
+    const initialState = {};
     const [formData, setFormData] = useState(initialState);
 
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData(fData => ({ ...fData, [name]: value }))
-        console.log(formData);
     }
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addBox(formData.width, formData.height, formData.backgroundColor)
+    }   
     return <>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="width">width</label>
             <input id="width" type="text" name="width" value={formData.width} onChange={handleChange} />
             <label htmlFor="height">height</label>

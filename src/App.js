@@ -4,7 +4,7 @@ import BoxList from "./BoxList"
 
 function App() {
   return <>
-    <h1>Another h1</h1>
+    <h1>Welcome to the box factory floor</h1>
     <BoxList />
   </>;
 }
